@@ -1,0 +1,130 @@
+.container {
+    padding: 0rpx !important;
+}
+
+.bottom-show {
+    margin: 0 16rpx;
+
+    .section {
+        background-color: #FFFFFF;
+        border-radius: 20rpx;
+        padding: 20rpx;
+    }
+
+    .user-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20rpx;
+        color: #999;
+
+        .avatar-container {
+            display: flex;
+            align-items: center;
+
+            image {
+                width: 120rpx;
+                height: 120rpx;
+                border-radius: 50%;
+                margin-right: 20rpx;
+            }
+
+            .name-container {
+                display: flex;
+                flex-direction: column;
+                font-size: 24rpx;
+
+                text:first-child {
+                    font-size: 28rpx;
+                }
+
+                .ellipsis {
+                    width: 400rpx;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    margin: 5rpx 0;
+                }
+            }
+        }
+    }
+
+    .member-open-show {
+        margin-top: 30rpx;
+
+        .member-tips-item {
+            display: flex;
+            margin: 25rpx 15rpx;
+            color: #999;
+            line-height: 50rpx;
+
+            text {
+                font-size: 25rpx;
+                margin-left: 20rpx;
+            }
+
+            .iconfont {
+                color: #a2b364;
+            }
+        }
+    }
+
+
+    //设置面板
+    .setting-show {
+        margin-top: 30rpx;
+
+        button {
+            text-align: left;
+            border-radius: 0;
+            background-color: rgba(0, 0, 0, 0); //这是透明色
+        }
+
+        button::after {
+            border: none;
+        }
+
+
+        //设置按钮
+        .setting-list {
+            padding: 0 20rpx;
+            margin-bottom: 20rpx;
+            border-radius: 12rpx;
+            font-weight: bold;
+
+            .setting-item {
+                font-size: 32rpx;
+                font-weight: bold;
+                color: #333;
+                height: 90rpx;
+                line-height: 90rpx;
+                padding-left: 10rpx;
+                border-top: 1rpx solid #ddd;
+                position: relative;
+
+                &:first-child {
+                    border-top: none;
+                }
+
+                &::after {
+                    content: '>';
+                    font-family: 'iconfont';
+                    position: absolute;
+                    top: 50%;
+                    right: 18rpx;
+                    font-size: 24rpx;
+                    transform: translateY(-50%);
+                    color: #999;
+                }
+            }
+        }
+
+        button::after {
+            width: auto;
+            height: auto;
+            left: auto;
+            border: none;
+        }
+    }
+}

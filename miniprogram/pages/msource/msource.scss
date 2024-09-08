@@ -1,0 +1,83 @@
+.container {
+    padding: 0rpx !important;
+}
+
+
+//内容展示模块
+.content-show {
+    margin: 0 16rpx;
+
+    .section {
+        background-color: #ffffff;
+        border-radius: 20rpx;
+        padding: 20rpx;
+        margin-top: 20rpx;
+    }
+
+    //热门资源
+    .hot-data-show {
+
+        /* 确保每个view元素宽度一致，且不换行 */
+        .hot-data-content-image {
+            /* 根据需要设置间距 */
+            margin: 10px 7px;
+
+            .douban-info {
+                display: flex;
+
+                .info-show {
+                    // background-color: aqua;
+                    margin: 15rpx 10rpx 15rpx 30rpx;
+
+                    .info-title {
+                        font-size: 31rpx;
+                        font-weight: bold;
+                    }
+
+                    .info-subtitle {
+                        margin: 15rpx 0rpx 15rpx 0rpx;
+                        color: #777;
+                        font-size: 28rpx;
+                    }
+
+                    .info-intro {
+                        display: -webkit-box;  /* 将p标签变成弹性盒子 */
+                        -webkit-line-clamp: 1;  /* 最多显示3行 */
+                        -webkit-box-orient: vertical;  /* 垂直排列 */
+                        overflow: hidden;  /* 超出部分隐藏 */
+                        text-overflow: ellipsis;  /* 显示省略号 */
+                        color: #777;
+                        font-size: 28rpx;
+                    }
+                }
+            }
+        }
+
+        /* 确保图片填充整个view元素 */
+        .van-image {
+            width: 150rpx;
+            height: 240rpx;
+            /* 确保图片覆盖整个元素区域 */
+            object-fit: cover;
+            margin-bottom: 7px;
+        }
+    }
+
+}
+
+
+/* 底部声明样式 */
+.foot-statement {
+    margin-top: auto;
+    /* 自动将声明部分推到总视图的底部 */
+    margin-bottom: 10px;
+    /* 与底部保持10px的距离 */
+    padding: 10px;
+    /* 根据需要添加内边距 */
+    text-align: center;
+    /* 文本居中 */
+    color: #999999;
+    /* 浅灰色字体 */
+    font-size: 25rpx;
+    font-weight: bold;
+}

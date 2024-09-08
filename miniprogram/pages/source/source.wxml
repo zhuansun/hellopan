@@ -1,0 +1,116 @@
+<view class="container">
+    <!-- 顶部展示图 -->
+    <view class="top-show">
+        <image mode="widthFix" class="top-show-img" src="{{ bannerUrl }}"></image>
+    </view>
+
+    <!-- 搜索模块 -->
+    <view class="search-show" style="background:{{topSearchShowBgColor}}">
+        <view class="search-show-inner section">
+            <view class="search-show-inner-icon">
+                <image mode="aspectFill" src="../../assets/images/search.png"></image>
+            </view>
+            <input value="{{value}}" bindconfirm="onSearch" bindinput="onSearchInpusChange" class="search-show-inner-input" confirmType="search" placeholder="电影、电视剧、综艺等" placeholderClass="input-placeholder"></input>
+        </view>
+    </view>
+
+    <!-- 内容展示模块 -->
+    <view class="content-show">
+        <view wx:if="{{ !searchview }}">
+            <!-- 关于公告面板 -->
+            <view class="notice-show section">
+                <scroll-view scroll-y="true">
+                    <block wx:for="{{ noticeInfo }}" wx:key="code">
+                        <view data-index="{{index}}" data-item="{{item}}">
+                            <view class="notice-show-item">
+                                <text>{{item}}</text>
+                            </view>
+                        </view>
+                    </block>
+                </scroll-view>
+            </view>
+            <!--- 热门资源模块 -->
+            <!-- 判断 hotDataMap 如果是空，则显示 请点击重试-->
+            <block wx:if="{{ !hotDataEmpty }}">
+                <!-- 遍历hotDataMap -->
+                <block wx:if="{{ indexModel === 'TEXT' }}" wx:for="{{ hotDataList }}" wx:for-index="outerIndex" wx:for-item="outerItem" wx:key="outerIndex">
+                    <view class="hot-data-show section">
+                        <scroll-view scroll-y="true" scroll-into-view="searchResultView" scroll-with-animation>
+                            <view class="hot-data-title" data-index="{{ outerIndex }}" data-item="{{ outerItem }}">
+                                <text class="hot-data-title-name" bindtap="onHotDataClick">{{ outerItem.type }}</text>
+                            </view>
+                            <scroll-view scroll-y="true">
+                                <block wx:for="{{ outerItem.nameList }}" wx:for-index="innerIndex" wx:key="innerIndex">
+                                    <view class="hot-data-content-inner" wx:if="{{innerIndex % 2 === 0}}">
+                                        <van-row>
+                                            <view wx:if="{{outerItem.nameList[innerIndex]}}" bindtap="onHotItemClick" data-index="{{ innerIndex }}" data-item="{{ outerItem.nameList[innerIndex] }}">
+                                                <van-col span="11" offset="1">
+                                                    <van-icon name="fire" /> <text class="inner-name"> {{ outerItem.nameList[innerIndex] }}</text>
+                                                </van-col>
+                                            </view>
+                                            <view wx:if="{{outerItem.nameList[innerIndex+1]}}" bindtap="onHotItemClick" data-index="{{ innerIndex+1 }}" data-item="{{ outerItem.nameList[innerIndex+1] }}">
+                                                <van-col span="11" offset="1">
+                                                    <van-icon name="fire" /> <text class="inner-name"> {{ outerItem.nameList[innerIndex+1] }}</text>
+                                                </van-col>
+                                            </view>
+                                        </van-row>
+                                    </view>
+                                </block>
+                            </scroll-view>
+                        </scroll-view>
+                    </view>
+                </block>
+
+                <!-- 调整展示图片 -->
+                <block wx:if="{{ indexModel === 'PIC' }}" wx:for="{{ hotDataList }}" wx:for-index="outerIndex" wx:for-item="outerItem" wx:key="outerIndex">
+                    <view class="hot-data-show section">
+                        <scroll-view scroll-y="true" scroll-into-view="searchResultView" scroll-with-animation>
+                            <view class="hot-data-title" data-index="{{ outerIndex }}" data-item="{{ outerItem }}">
+                                <text class="hot-data-title-name" bindtap="onHotDataClick">{{ outerItem.type }}</text>
+                                <text wx:if="{{ outerItem.hotList.length > 5 }}" class="hot-data-title-more" data-type="{{ outerItem.type }}" bindtap="onHotDataMore">查看更多...</text>
+                            </view>
+                            <scroll-view class="hot-data-content-image-scroll" scroll-x="true">
+                                <block wx:for="{{ outerItem.hotList }}" wx:for-index="innerIndex" wx:key="innerIndex">
+                                    <view class="hot-data-content-image" wx:if="{{outerItem.hotList[innerIndex]}}" bindtap="onHotItemClick" data-index="{{ innerIndex }}" data-item="{{ outerItem.hotList[innerIndex] }}">
+                                        <view class="hot-data-content-image-inner">
+                                            <van-image radius="8" src="{{outerItem.hotList[innerIndex].coverUrl}}" />
+                                            <text class="hot-data-content-image-inner-text">{{ outerItem.hotList[innerIndex].name }}</text>
+                                        </view>
+                                    </view>
+                                </block>
+                            </scroll-view>
+                        </scroll-view>
+                    </view>
+                </block>
+            </block>
+            <block wx:else>
+                <view class="hot-data-show section ">
+                    <view class="network-error-show" bindtap="onNetErrorRetry">
+                        <text>请点击重试</text>
+                    </view>
+                </view>
+            </block>
+            <!-- 设置面板 -->
+            <view wx:if="{{ menuConfig }}" class="setting-show section">
+                <view class="setting-list concat">
+                    <button hover-class="none" class="setting-item">
+                        <navigator url="/pages/member/member">个人中心</navigator>
+                    </button>
+                    <button hover-class="none" class="setting-item">
+                        <navigator url="/pages/problem/problem">帮助中心</navigator>
+                    </button>
+                    <button wx:if="{{ menuConfig.m6 }}" hover-class="none" class="setting-item">
+                        <navigator url="/pages/reminder/reminder">留言反馈</navigator>
+                    </button>
+                    <button wx:if="{{ menuConfig.m7 }}" hover-class="none" class="setting-item" bind:tap="clealAllStorage">
+                        清理缓存
+                    </button>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="foot-statement">
+        <text>{{ footContent }}</text>
+    </view>
+
+</view>

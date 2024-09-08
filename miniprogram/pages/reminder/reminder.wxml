@@ -1,0 +1,44 @@
+<view class="container">
+    <view class="content-show">
+
+        <view style="margin-top: 30rpx; margin-bottom: 30rpx;">
+            <van-row>
+                <!-- <van-col span="8" offset="2">
+                    <van-button custom-style='width:100%' round type="info" bindtap="showNeedReminderPopup">求 片</van-button>
+                </van-col> -->
+                <van-col span="10" offset="7">
+                    <van-button custom-style='width:100%' round type="warning" bindtap="showAskReminderPopup">留 言</van-button>
+                </van-col>
+            </van-row>
+        </view>
+
+        <van-popup show="{{ showReminder }}" position="top" round custom-style="height: 35%;" bind:close="closeReminderPopup">
+            <view class="input-textarea-show">
+                <view class="input-textarea-title">{{reminderTitle}}</view>
+                <view class="input-textarea-text">
+                    <textarea placeholder="尽可能的详细的描述您的需求吧..." class="input-textarea-text-1" maxlength='500' bindinput="onInputReminderQuestion" value="{{ reminderQuestion }}"></textarea>
+                </view>
+
+                <view class="analyze-result-operate">
+                    <van-row>
+                        <van-col span="16" offset="4">
+                            <van-button custom-style='width:100%' round type="info" bindtap="onSubmitReminder">提 交</van-button>
+                        </van-col>
+                    </van-row>
+                </view>
+            </view>
+        </van-popup>
+
+        <scroll-view scroll-y="true">
+            <van-collapse accordion value="{{ activeName }}" bind:change="onChange">
+                <block wx:for="{{ reminderList }}" wx:key="id">
+                    <view data-index="{{index}}" data-item="{{item.id}}">
+                        <van-collapse-item title="{{item.title}}" name="{{item.id}}">
+                            <text>{{ item.content }}</text>
+                        </van-collapse-item>
+                    </view>
+                </block>
+            </van-collapse>
+        </scroll-view>
+    </view>
+</view>

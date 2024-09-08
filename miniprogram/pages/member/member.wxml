@@ -1,0 +1,54 @@
+<!--pages/info/info.wxml-->
+<view class="container">
+
+    <view class="bottom-show">
+
+        <view wx:if="{{hasLogin}}" class="user-container section">
+            <view class="avatar-container" bindtap="freshlogin">
+                <image src="{{ userInfo.avatarUrl }}"></image>
+                <view class="name-container">
+                    <text class="ellipsis">{{ userInfo.userName }}</text>
+                    <text>ID：{{ userInfo.id }}</text>
+                </view>
+            </view>
+        </view>
+
+        <view wx:if="{{!hasLogin}}" class="member-open-show section">
+            <van-cell-group>
+                <van-field value="{{ authCode }}" placeholder="请输入授权码开始使用 ~ " bind:change="onAuthCodeChange" use-button-slot maxlength="{{ 30 }}">
+                    <van-button slot="button" size="small" type="primary" bindtap="onAuthCodeComfirm">确定</van-button>
+                </van-field>
+            </van-cell-group>
+            <scroll-view scroll-y="true">
+                <view class="member-tips-item">
+                    <text>{{memberTips}}</text>
+                </view>
+            </scroll-view>
+        </view>
+
+        <!-- 设置面板 -->
+        <view class="setting-show section">
+            <view class="setting-list concat">
+                <van-cell title="首页样式" label="是否展示图片模式" size='large'>
+                    <van-switch checked="{{ indexModel === 'PIC' }}" bind:change="openIndexModelOnChange" />
+                </van-cell>
+            </view>
+        </view>
+
+        <!-- 设置面板 -->
+        <view class="setting-show section">
+            <view class="setting-list concat">
+                <!-- 
+        <button hover-class="none" class="setting-item" bind:tap="authCodeBuy">
+            购买授权
+        </button> -->
+                <button hover-class="none" class="setting-item">
+                    <navigator url="/pages/problem/problem">帮助中心</navigator>
+                </button>
+                <button hover-class="none" class="setting-item">
+                    <navigator url="/pages/reminder/reminder">留言反馈</navigator>
+                </button>
+            </view>
+        </view>
+    </view>
+</view>

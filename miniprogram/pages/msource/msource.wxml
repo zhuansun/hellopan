@@ -1,0 +1,30 @@
+<!--pages/info/info.wxml-->
+<view class="container">
+    <!-- 内容展示模块 -->
+    <view class="content-show">
+        <!--- 热门资源模块 -->
+        <!-- 判断 hotDataMap 如果是空，则显示 请点击重试-->
+        <!-- 调整展示图片 -->
+        <view class="hot-data-show section">
+            <block wx:for="{{ clickHotDataList }}" wx:for-index="index" wx:for-item="item" wx:key="index">
+                <view class="hot-data-content-image" >
+                    <view class="douban-info" data-item="{{ item.name }}" bindtap="onHotItemClick">
+                        <van-image radius="8" src="{{ item.coverUrl }}" />
+                        <view class="info-show">
+                            <view class="info-title"><text>{{ item.name }}</text></view>
+                            <view wx:if="{{ item.subTitle }}" class="info-subtitle"><text>{{ item.subTitle }}</text></view>
+                            <view wx:if="{{ item.intro }}" class="info-intro"><text>{{ item.intro }}</text></view>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </view>
+
+
+        <view class="foot-statement">
+            <text> 暂无更多数据~ </text>
+        </view>
+
+    </view>
+
+</view>

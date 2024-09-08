@@ -1,0 +1,293 @@
+.container {
+    padding: 0rpx !important;
+}
+
+//顶部展示图
+.top-show {
+    width: 100%;
+    height: 100%;
+
+    .top-show-img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.search-show {
+    position: fixed;
+    width: 100%;
+    z-index: 99;//当前元素在其他元素之上，值越大，越靠上
+    padding-top: 40rpx;
+
+
+    .search-show-inner {
+        background: #f7f7f7;
+        border-radius: 20px;
+        margin: 25px 10px 5px;
+        position: relative;
+    }
+    .section {
+        border-radius: 20rpx;
+        padding: 20rpx;
+    }
+
+    //调整图标位置
+    .search-show-inner-icon {
+        height: 15px;
+        left: 22px;
+        position: absolute;
+        top: 17px;
+        width: 15px;
+    }
+
+    //调整图标大小
+    .search-show-inner-icon image {
+        height: 100%;
+        width: 100%;
+    }
+
+    .search-show-inner-input {
+        color: #101010;
+        flex-grow: 1;
+        flex-shrink: 1;
+        font-size: 14px;
+        overflow: hidden;
+        padding: 5px 15px 5px 35px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+}
+
+
+//内容展示模块
+.content-show {
+    margin: 0 16rpx;
+
+    .section {
+        background-color: #ffffff;
+        border-radius: 20rpx;
+        padding: 20rpx;
+        margin-top: 20rpx;
+    }
+
+    // 公告栏样式
+    .notice-show {
+        margin-top: -65rpx;
+        /* 设置tabbar背景颜色 */
+        // background-color: #000000 !important;
+        /* 毛玻璃 高斯模糊 */
+        // backdrop-filter: blur(10px) !important;
+        // background-color: rgb(255 255 255 / .38) !important;
+
+        .notice-title {
+            font-size: 32rpx;
+            font-weight: bold;
+            padding: 10rpx 0;
+        }
+
+        .notice-show-item {
+            display: flex;
+            margin: 10rpx 15rpx;
+            color: #333;
+
+            text {
+                font-size: 30rpx;
+                margin-left: 20rpx;
+                font-weight: bold;
+            }
+        }
+
+        //缩小搜索标签的大小
+        .van-icon {
+            color: #a2b364;
+            font-size: 30rpx !important;
+        }
+    }
+
+    //热门资源
+    .hot-data-show {
+        .hot-data-title {
+            margin: 8rpx 0;
+            display: flex;
+            justify-content: space-between;
+
+            .hot-data-title-name {
+                font-size: 35rpx;
+                font-weight: bold;
+            }
+
+            .hot-data-title-more {
+                font-size: 32rpx;
+                text-align: right;
+                color: #6495ED;
+            }
+        }
+
+        .hot-data-content-inner {
+            margin: 15rpx 0;
+
+            .inner-name {
+                font-size: 32rpx;
+                color: #333;
+                font-weight: bold;
+            }
+
+            //缩小搜索标签的大小
+            .van-icon {
+                color: #a2b364;
+                font-size: 30rpx !important;
+            }
+        }
+
+        /* 确保scroll-view能够水平滚动 */
+        .hot-data-content-image-scroll {
+            display: flex;
+            flex-direction: row;
+            white-space: nowrap;
+            overflow-x: scroll;
+        }
+
+        /* 确保每个view元素宽度一致，且不换行 */
+        .hot-data-content-image {
+            flex-shrink: 0;
+            /* 根据实际情况设置宽度 */
+            // width: 100px;
+            /* 根据实际情况设置高度 */
+            // height: 100px;
+            display: inline-block;
+            /* 根据需要设置间距 */
+            margin: 10px 7px;
+
+            .hot-data-content-image-inner {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+
+                .hot-data-content-image-inner-text {
+                    width: 160rpx;
+                    /*超出部分隐藏*/
+                    overflow: hidden;
+                    /*不换行*/
+                    white-space: nowrap;
+                    /*添加...*/
+                    text-overflow: ellipsis;
+                    color: gray;
+                    font-size: 24rpx;
+                    text-align: center;
+                }
+            }
+        }
+
+        /* 确保图片填充整个view元素 */
+        .van-image {
+            width: 160rpx;
+            height: 250rpx;
+            /* 确保图片覆盖整个元素区域 */
+            object-fit: cover;
+        }
+    }
+
+    //设置面板
+    .setting-show {
+        margin-top: 30rpx;
+
+        button {
+            text-align: left;
+            border-radius: 0;
+            background-color: rgba(0, 0, 0, 0); //这是透明色
+        }
+
+        button::after {
+            border: none;
+        }
+
+        .setting-list {
+            padding: 0 20rpx;
+            margin-bottom: 20rpx;
+            border-radius: 12rpx;
+            font-weight: bold;
+
+            .setting-item {
+                font-size: 32rpx;
+                font-weight: bold;
+                color: #333;
+                height: 90rpx;
+                line-height: 90rpx;
+                padding-left: 10rpx;
+                border-top: 1rpx solid #ddd;
+                position: relative;
+
+                &:first-child {
+                    border-top: none;
+                }
+
+                &::after {
+                    content: '>';
+                    font-family: 'iconfont';
+                    position: absolute;
+                    top: 50%;
+                    right: 18rpx;
+                    font-size: 24rpx;
+                    transform: translateY(-50%);
+                    color: #999;
+                }
+            }
+        }
+
+        button::after {
+            width: auto;
+            height: auto;
+            left: auto;
+            border: none;
+        }
+    }
+}
+
+
+.network-error-show {
+    padding: 40px 0;
+    color: #999999;
+    /* 浅灰色字体 */
+    font-weight: bold;
+    /* 根据需要添加内边距 */
+    text-align: center;
+}
+
+
+.auth-open-show {
+    margin-top: 30rpx;
+
+    .auth-tips-item {
+        display: flex;
+        margin: 25rpx 15rpx;
+        color: #999;
+        line-height: 50rpx;
+
+        text {
+            font-size: 25rpx;
+            margin-left: 20rpx;
+        }
+
+        .iconfont {
+            color: #a2b364;
+        }
+    }
+}
+
+
+/* 底部声明样式 */
+.foot-statement {
+    margin-top: auto;
+    /* 自动将声明部分推到总视图的底部 */
+    margin-bottom: 10px;
+    /* 与底部保持10px的距离 */
+    padding: 10px;
+    /* 根据需要添加内边距 */
+    text-align: center;
+    /* 文本居中 */
+    color: #999999;
+    /* 浅灰色字体 */
+    font-size: 23rpx;
+    font-weight: bold;
+}

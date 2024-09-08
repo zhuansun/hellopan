@@ -1,0 +1,165 @@
+.container {
+    padding: 0rpx !important;
+}
+
+//搜索模块
+.search-show {
+    margin: 0 16rpx;
+    background-color: #fff;
+    border-radius: 20rpx; //模块圆角
+    padding: 20rpx;
+    margin-top: 30rpx;
+    height: 100rpx;
+    display: flex;
+    /* 使用Flexbox布局 */
+    align-items: center;
+
+    /* 垂直居中 */
+    .search-show-inner {
+        width: 100%;
+    }
+}
+
+
+//内容展示模块
+.content-show {
+    margin: 0 16rpx;
+
+    .section {
+        background-color: #fff;
+        border-radius: 20rpx;
+        padding: 20rpx;
+        margin-top: 30rpx;
+    }
+
+
+    .douban-show {
+        background-color: #fff;
+        border-radius: 20rpx; //模块圆角
+
+        .douban-info {
+            display: flex;
+
+            .info-show {
+                // background-color: aqua;
+                margin-left: 30rpx;
+
+                .info-title {
+                    font-size: 43rpx;
+                    font-weight: bold;
+                }
+
+                .info-subtitle {
+                    color: #777;
+                    font-size: 28rpx;
+                }
+
+                .info-rating {
+                    color: #777;
+                    font-size: 28rpx;
+                }
+
+                .info-durations {
+                    color: #777;
+                    font-size: 28rpx;
+                }
+            }
+
+        }
+    }
+
+    //搜索结果展示模块
+    .search-result-show {
+        .search-result-top {
+            display: flex;
+            justify-content: space-between;
+
+            .search-result-top-title {
+                font-size: 35rpx;
+                font-weight: bold;
+            }
+
+            .search-result-top-copy {
+                font-weight: bold;
+                text-align: right;
+            }
+        }
+
+        .inner-content {
+            margin: 3%;
+            /* 添加边框样式 */
+            border: 1px solid #ddd;
+            /* 可选：为边框添加圆角 */
+            border-radius: 5px;
+            padding: 20rpx;
+            /* 可选：添加阴影 */
+            box-shadow: 3rpx 3rpx 13rpx rgba(0, 0, 0, 0.3);
+
+            /* 可选：为内容添加内边距 */
+            .inner-name {
+                font-size: 30rpx;
+                color: #333;
+                margin-bottom: 5px;
+                font-weight: bold;
+            }
+
+            .inner-url {
+                font-size: 30rpx;
+                color: #777;
+                word-wrap: break-word;
+                /* 长单词换行 */
+            }
+        }
+    }
+}
+
+
+/* 垂直居中 */
+.input-textarea-show {
+    margin-top: 5%;
+    .input-textarea-title {
+        text-align: center;
+        margin-bottom: 3%;
+        font-size: 40rpx;
+        font-weight: bold;
+    }
+
+    .input-textarea-text {
+        height: 240rpx;
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        // padding: 0 35rpx;
+        // background-color: #ADD8E6;
+        border-radius: 20rpx; //模块圆角
+        background-color: #f5f5f5;
+
+        .input-textarea-text-1 {
+            padding-left: 5%;
+            padding-top: 3%;
+            // background-color: red;
+            width: 90%;
+            border-radius: 15rpx; //模块圆角
+            font-size: 32rpx;
+        }
+    }
+    .analyze-result-operate {
+        margin-top: 5%;
+    }
+}
+
+/* 底部声明样式 */
+.foot-statement {
+    margin-top: auto;
+    /* 自动将声明部分推到总视图的底部 */
+    margin-bottom: 10px;
+    /* 与底部保持10px的距离 */
+    padding: 10px;
+    /* 根据需要添加内边距 */
+    text-align: center;
+    /* 文本居中 */
+    color: #999999;
+    /* 浅灰色字体 */
+    font-size: 12px;
+    font-weight: bold;
+}

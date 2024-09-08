@@ -1,0 +1,47 @@
+.container {
+    padding: 0rpx !important;
+}
+
+
+//内容展示模块
+.content-show {
+    margin: 0 16rpx;
+
+
+    /* 垂直居中 */
+    .input-textarea-show {
+        margin-top: 5%;
+
+        .input-textarea-title {
+            text-align: center;
+            margin-bottom: 3%;
+            font-size: 40rpx;
+            font-weight: bold;
+        }
+
+        .input-textarea-text {
+            height: 240rpx;
+            width: 90%;
+            margin-left: 5%;
+            margin-right: 5%;
+            // padding: 0 35rpx;
+            // background-color: #ADD8E6;
+            border-radius: 20rpx; //模块圆角
+            background-color: #f5f5f5;
+
+            .input-textarea-text-1 {
+                padding-left: 5%;
+                padding-top: 3%;
+                // background-color: red;
+                width: 90%;
+                border-radius: 15rpx; //模块圆角
+                font-size: 32rpx;
+            }
+        }
+
+        .analyze-result-operate {
+            margin-top: 5%;
+        }
+
+    }
+}

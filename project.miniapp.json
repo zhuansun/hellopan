@@ -1,0 +1,103 @@
+{
+  "miniVersion": "v2",
+  "name": "HelloPan",
+  "version": "0.0.1",
+  "i18nFilePath": "i18n",
+  "mini-android": {
+    "sdkVersion": "1.4.4",
+    "toolkitVersion": "0.10.0",
+    "useExtendedSdk": {
+      "media": false,
+      "bluetooth": false,
+      "network": false,
+      "scanner": false,
+      "xweb": false
+    },
+    "icons": {
+      "hdpi": "miniapp/android/icons/mipmap-hdpi/ic_launcher.png",
+      "xhdpi": "miniapp/android/icons/mipmap-xhdpi/ic_launcher.png",
+      "xxhdpi": "miniapp/android/icons/mipmap-xxhdpi/ic_launcher.png",
+      "xxxhdpi": "miniapp/android/icons/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    "splashscreen": {
+      "hdpi": "",
+      "xhdpi": "",
+      "xxhdpi": ""
+    },
+    "enableVConsole": "close",
+    "privacy": {
+      "enable": true
+    }
+  },
+  "mini-ios": {
+    "sdkVersion": "1.4.8",
+    "toolkitVersion": "0.0.9",
+    "useExtendedSdk": {
+      "WeAppOpenFuns": true,
+      "WeAppNetwork": false,
+      "WeAppBluetooth": false,
+      "WeAppMedia": false,
+      "WeAppLBS": false,
+      "WeAppOthers": false,
+      "WeAppIdaas": true
+    },
+    "enableVConsole": "close",
+    "icons": {
+      "mainIcon120": "miniapp/ios/icons/icon-40@3x.png",
+      "mainIcon180": "miniapp/ios/icons/icon-60@3x.png",
+      "spotlightIcon80": "miniapp/ios/icons/icon-40@2x.png",
+      "spotlightIcon120": "miniapp/ios/icons/icon-40@3x.png",
+      "settingsIcon58": "miniapp/ios/icons/icon-29@2x.png",
+      "settingsIcon87": "miniapp/ios/icons/icon-29@3x.png",
+      "notificationIcon40": "miniapp/ios/icons/icon-20@2x.png",
+      "notificationIcon60": "miniapp/ios/icons/icon-20@3x.png",
+      "appStore1024": "miniapp/ios/icons/icon-1024.png",
+      "ipadMainIcon152": "miniapp/ios/icons/icon-76@2x.png",
+      "ipadMainIcon167": "miniapp/ios/icons/icon-83.5@2x.png",
+      "ipadSpotlightIcon40": "miniapp/ios/icons/icon-20@2x.png",
+      "ipadSpotlightIcon80": "miniapp/ios/icons/icon-40@2x.png",
+      "ipadSpotlightIcon58": "miniapp/ios/icons/icon-29@2x.png",
+      "ipadNotificationIcon40": "miniapp/ios/icons/icon-20@2x.png"
+    },
+    "splashScreen": {
+      "customImage": ""
+    },
+    "privacy": {
+      "enable": false
+    },
+    "enableOpenUrlNavigate": true,
+    "splashscreen": {
+      "customImage": "miniapp/ios/splashscreen/start.png"
+    },
+    "buildCloud": {
+      "useRemote": false
+    },
+    "enableIpad": true,
+    "privateDescriptions": {
+      "NSPhotoLibraryUsageDescription": "当前应用程序需要访问用户的相册，如需修改描述请前往「project.miniapp.json - 隐私信息访问许可描述」修改，并且关闭「自动使用默认描述补全默认隐私信息访问许可」",
+      "NSCameraUsageDescription": "当前应用程序需要访问用户的相机，如需修改描述请前往「project.miniapp.json - 隐私信息访问许可描述」修改，并且关闭「自动使用默认描述补全默认隐私信息访问许可」",
+      "NSMicrophoneUsageDescription": "当前应用程序需要访问用户的麦克风，如需修改描述请前往「project.miniapp.json - 隐私信息访问许可描述」修改，并且关闭「自动使用默认描述补全默认隐私信息访问许可」",
+      "NSLocationWhenInUseUsageDescription": "当前应用程序需要在使用时访问用户的位置，如需修改描述请前往「project.miniapp.json - 隐私信息访问许可描述」修改，并且关闭「自动使用默认描述补全默认隐私信息访问许可」",
+      "NSLocationAlwaysUsageDescription": "当前应用程序需要始终访问用户的位置，如需修改描述请前往「project.miniapp.json - 隐私信息访问许可描述」修改，并且关闭「自动使用默认描述补全默认隐私信息访问许可」",
+      "NSLocationAlwaysAndWhenInUseUsageDescription": "当前应用程序需要始终和在使用时访问用户的位置，如需修改描述请前往「project.miniapp.json - 隐私信息访问许可描述」修改，并且关闭「自动使用默认描述补全默认隐私信息访问许可」",
+      "NSContactsUsageDescription": "当前应用程序需要访问用户的联系人，如需修改描述请前往「project.miniapp.json - 隐私信息访问许可描述」修改，并且关闭「自动使用默认描述补全默认隐私信息访问许可」",
+      "NSCalendarsUsageDescription": "当前应用程序需要访问用户的日历，如需修改描述请前往「project.miniapp.json - 隐私信息访问许可描述」修改，并且关闭「自动使用默认描述补全默认隐私信息访问许可」",
+      "NSRemindersUsageDescription": "当前应用程序需要访问用户的提醒事项，如需修改描述请前往「project.miniapp.json - 隐私信息访问许可描述」修改，并且关闭「自动使用默认描述补全默认隐私信息访问许可」",
+      "NSBluetoothPeripheralUsageDescription": "当前应用程序需要访问用户的蓝牙，如需修改描述请前往「project.miniapp.json - 隐私信息访问许可描述」修改，并且关闭「自动使用默认描述补全默认隐私信息访问许可」",
+      "NSBluetoothAlwaysUsageDescription": "当前应用程序需要始终访问用户的蓝牙，如需修改描述请前往「project.miniapp.json - 隐私信息访问许可描述」修改，并且关闭「自动使用默认描述补全默认隐私信息访问许可」",
+      "NSMotionUsageDescription": "当前应用程序需要访问用户的运动与健身数据，如需修改描述请前往「project.miniapp.json - 隐私信息访问许可描述」修改，并且关闭「自动使用默认描述补全默认隐私信息访问许可」",
+      "NSHomeKitUsageDescription": "当前应用程序需要访问用户的HomeKit数据，如需修改描述请前往「project.miniapp.json - 隐私信息访问许可描述」修改，并且关闭「自动使用默认描述补全默认隐私信息访问许可」",
+      "NSSiriUsageDescription": "当前应用程序需要使用Siri，如需修改描述请前往「project.miniapp.json - 隐私信息访问许可描述」修改，并且关闭「自动使用默认描述补全默认隐私信息访问许可」",
+      "NSSpeechRecognitionUsageDescription": "当前应用程序需要使用语音识别，如需修改描述请前往「project.miniapp.json - 隐私信息访问许可描述」修改，并且关闭「自动使用默认描述补全默认隐私信息访问许可」",
+      "NSVideoSubscriberAccountUsageDescription": "当前应用程序需要访问用户的视频订阅账户，如需修改描述请前往「project.miniapp.json - 隐私信息访问许可描述」修改，并且关闭「自动使用默认描述补全默认隐私信息访问许可」",
+      "NSAppleMusicUsageDescription": "当前应用程序需要访问用户的Apple Music媒体库，如需修改描述请前往「project.miniapp.json - 隐私信息访问许可描述」修改，并且关闭「自动使用默认描述补全默认隐私信息访问许可」",
+      "NSFaceIDUsageDescription": "当前应用程序需要使用Face ID，如需修改描述请前往「project.miniapp.json - 隐私信息访问许可描述」修改，并且关闭「自动使用默认描述补全默认隐私信息访问许可」",
+      "NSNFCReaderUsageDescription": "当前应用程序需要使用NFC读取器，如需修改描述请前往「project.miniapp.json - 隐私信息访问许可描述」修改，并且关闭「自动使用默认描述补全默认隐私信息访问许可」",
+      "NSLocalNetworkUsageDescription": "当前应用程序需要访问本地网络，如需修改描述请前往「project.miniapp.json - 隐私信息访问许可描述」修改，并且关闭「自动使用默认描述补全默认隐私信息访问许可」",
+      "NSSystemAdministrationUsageDescription": "当前应用程序需要进行系统管理操作，如需修改描述请前往「project.miniapp.json - 隐私信息访问许可描述」修改，并且关闭「自动使用默认描述补全默认隐私信息访问许可」",
+      "NFCReaderUsageDescription": "应用试图使用 NFC 读取器功能时被展示给用户，如需修改描述请前往「project.miniapp.json - 隐私信息访问许可描述」修改，并且关闭「自动使用默认描述补全默认隐私信息访问许可",
+      "NSPhotoLibraryAddUsageDescription": "应用程序在请求访问照片库，如需修改描述请前往「project.miniapp.json - 隐私信息访问许可描述」修改，并且关闭「自动使用默认描述补全默认隐私信息访问许可"
+    }
+  },
+  "versionCode": 100
+}

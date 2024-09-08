@@ -1,0 +1,37 @@
+{
+	"pages": [
+		"pages/source/source",
+		"pages/result/result",
+		"pages/problem/problem",
+        "pages/member/member",
+        "pages/reminder/reminder",
+        "pages/webview/webview",
+        "pages/msource/msource"
+	],
+	"window": {
+		"backgroundTextStyle": "light",
+		"navigationBarTitleText": "HelloPan",
+		"navigationBarTextStyle": "white"
+	},
+	"usingComponents": {
+		"van-switch": "./components/dist/switch/index",
+		"van-tag": "./components/dist/tag/index",
+		"van-rate": "./components/dist/rate/index",
+		"van-image": "./components/dist/image/index",
+		"van-collapse": "./components/dist/collapse/index",
+		"van-collapse-item": "./components/dist/collapse-item/index",
+		"van-row": "./components/dist/row/index",
+		"van-col": "./components/dist/col/index",
+		"van-icon": "./components/dist/icon/index",
+		"van-empty": "./components/dist/empty/index",
+		"van-button": "./components/dist/button/index",
+		"van-popup": "./components/dist/popup/index",
+		"van-field": "./components/dist/field/index",
+		"van-cell-group": "./components/dist/cell-group/index",
+		"van-cell": "./components/dist/cell/index"
+	},
+	"sitemapLocation": "sitemap.json",
+	"miniApp": {
+		"useAuthorizePage": true
+	}
+}

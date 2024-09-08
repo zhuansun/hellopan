@@ -1,0 +1,15 @@
+<view class="container">
+    <view class="content-show">
+        <scroll-view scroll-y="true">
+            <van-collapse accordion value="{{ activeName }}" bind:change="onChange">
+                <block wx:for="{{ problemList }}" wx:key="code">
+                    <view data-index="{{index}}" data-item="{{item.code}}">
+                        <van-collapse-item title="{{item.codeName}}" name="{{item.code}}">
+                            <text> {{ item.codeValue }} </text>
+                        </van-collapse-item>
+                    </view>
+                </block>
+            </van-collapse>
+        </scroll-view>
+    </view>
+</view>

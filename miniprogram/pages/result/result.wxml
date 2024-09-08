@@ -1,0 +1,82 @@
+<!--pages/info/info.wxml-->
+<view class="container">
+    <!-- 内容展示模块 -->
+    <view class="content-show">
+
+        <!-- 豆瓣信息展示 -->
+        <view wx:if="{{ doubanInfo.title }}" class="douban-show section">
+            <view class="douban-info">
+                <van-image radius="8" width="100" height="160" src="{{ doubanInfo.coverUrl }}" />
+                <view class="info-show">
+                    <view class="info-title"><text>{{ doubanInfo.title }}</text></view>
+                    <view class="info-subtitle"><text>{{ doubanInfo.subTitle }}</text></view>
+                    <view wx:if="{{ doubanInfo.rating > 0 }}" class="info-rating">
+                        <van-rate value="{{ doubanInfo.rating / 10 * 5 }}" readonly allow-half size="{{ 18 }}" color="#ffd21e" void-icon="star" void-color="#eee" />
+                        <view><text>豆瓣评分： {{ doubanInfo.rating }} </text></view>
+                    </view>
+                    <view wx:else class="info-rating">
+                        <view><text>豆瓣评分： 暂无 </text></view>
+                    </view>
+                    <view wx:if="{{ doubanInfo.durations }}" class="info-durations"><text>片长：{{ doubanInfo.durations }}</text></view>
+                </view>
+            </view>
+            <view wx:if="{{ doubanInfo.intro }}">
+                <van-collapse accordion value="{{ showdoubanInfoIntro }}" border="{{false}}" bind:change="onDoubanInfoIntroShow">
+                    <van-collapse-item title="点击展开剧情简介 . . . " name="1">
+                        {{ doubanInfo.intro }}
+                    </van-collapse-item>
+                </van-collapse>
+            </view>
+        </view>
+
+        <!-- 搜索结果显示框 -->
+        <view wx:if="{{ searchview }}" class="search-result-show section">
+            <scroll-view scroll-y="true" scroll-into-view="searchResultView" scroll-with-animation>
+                <block wx:if="{{ searchList.length > 0 }}">
+                    <block wx:for="{{ searchList }}" wx:key="typeCode">
+                        <view class="search-result-top">
+                            <view class="search-result-top-title">
+                                <text>{{ item.typeName }}</text>
+                            </view>
+                            <view wx:if="{{index === 0}}" class="search-result-top-copy">
+                                <van-button round plain size='small' type="primary" icon="info-o" custom-style="margin-right:20rpx" bindtap="showReminderPopup">提醒更新</van-button>
+                                <van-button round plain size='small' type="primary" icon="passed">已获取复制权限</van-button>
+                            </view>
+                        </view>
+                        <scroll-view scroll-y="true">
+                            <block wx:for="{{ item.list }}" wx:key="url">
+                                <view bindtap="onSearchItemClick" data-index="{{ index }}" data-item="{{ item.url }}">
+                                    <view class="inner-content">
+                                        <van-tag wx:if="{{ item.tag }}" plain type="success">{{ item.tag }}</van-tag>
+                                        <text class="inner-name"> {{ item.name }}</text>
+                                        <text class="inner-url"> {{ item.url }}</text>
+                                    </view>
+                                </view>
+                            </block>
+                        </scroll-view>
+                    </block>
+                </block>
+                <block wx:else>
+                    <van-empty image="search" description="啊哦~ 换个搜索词再试试吧" />
+                </block>
+            </scroll-view>
+        </view>
+    </view>
+
+    <van-popup show="{{ showReminder }}" position="top" round custom-style="height: 35%;" bind:close="closeReminderPopup">
+       <view class="input-textarea-show">
+            <view class="input-textarea-title">提醒更新 {{value}}</view>
+            <view class="input-textarea-text">
+                <textarea placeholder="要说点什么吗?...不说可以直接提交哦" class="input-textarea-text-1" maxlength='200' bindinput="onInputReminderQuestion" value="{{ reminderQuestion }}"></textarea>
+            </view>
+
+            <view class="analyze-result-operate">
+                <van-row>
+                    <van-col span="16" offset="4">
+                        <van-button custom-style='width:100%' round type="info" bindtap="onSubmitReminder">提 交</van-button>
+                    </van-col>
+                </van-row>
+            </view>
+        </view>
+    </van-popup>
+</view>

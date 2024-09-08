@@ -1,0 +1,11 @@
+{
+	"ios": {
+		"name": "HelloPan"
+	},
+	"android": {
+		"name": "HelloPan"
+	},
+	"common": {
+		"name": "HelloPan"
+	}
+}
